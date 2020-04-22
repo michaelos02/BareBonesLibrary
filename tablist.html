@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <style>
+      #main{
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+    
+      #button-bar{
+        padding-top: 15px;      
+      }
+    </style>
+  </head>
+  <body>
+  <div id=main>
+    <h3 style="color: rgb(49, 14, 204)">Testing a Library</h3>
+    <p>Clicking the button below will attempt to make a call to a library function.</p>
+    <p>The results of the call will show below the button.</p>
+    <div class="block" id="button-bar">
+      <button class="action" id="btn-message">Show Message</button>
+      <button id="btn-close">Close</button>
+    </div>
+    <div id="result">placeholder</div>
+    <button class="create" id="btn-authorize">Add 45 and 55</button>
+  </div>
+  <div class="sidebar bottom">
+    <span class="gray">
+      mroResolutions</span>
+  </div>
+  
+  <?!= include("tablist-js")?>
+  </body>
+  
+</html>
+
+
