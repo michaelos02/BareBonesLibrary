@@ -3,6 +3,7 @@ function onOpen() {
   ui.createMenu('Library Check')
       .addItem("Show Sidebar", 'bbMod.showSidebar')
       .addItem("Get Permissions", 'bbMod.getPermission')
+      .addItem("Authorize", 'bbMod.showIt')
       .addToUi();
 }
 
