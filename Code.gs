@@ -1,3 +1,11 @@
+//Globla script info
+var SCRIPT_NAME = 'BareBonesModule';
+var SCRIPT_VERSION = 'v0.dev.mro';
+
+/**
+ * @OnlyCurrentDoc
+ */
+
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('Library Check')
