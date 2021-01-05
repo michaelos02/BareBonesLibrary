@@ -47,7 +47,7 @@ function theMessage(msg){
 }
 
 function callLibrary(){
-  return "Whoo hoo! Made it to bbMod";
+  return "Whoo hoo! Made it to the bbMOD!!";
 }
 
 /*
