@@ -1,6 +1,7 @@
 //GLOBAL script info
 var SCRIPT_NAME = 'BareBonesModule';
 var SCRIPT_VERSION = 'v0.dev.mro';
+var ADDED_forTS = "This was done online to see if we can pull...";
 
 /**
  * @OnlyCurrentDoc
