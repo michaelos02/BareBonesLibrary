@@ -1,4 +1,4 @@
-//Globla script info
+//GLOBAL script info
 var SCRIPT_NAME = 'BareBonesModule';
 var SCRIPT_VERSION = 'v0.dev.mro';
 
@@ -12,6 +12,10 @@ function onOpen() {
       .addItem("Show Sidebar", 'bbMod.showSidebar')
       .addItem("Get Permissions", 'bbMod.getPermission')
       .addItem("Authorize", 'bbMod.showIt2')
+      .addItem("test props", 'bbMod.showPropDialog')
+      .addSeparator()
+      .addItem("Copy Values", 'bbMod.copySomeValues')
+      .addItem("Try to authorize", 'bbMod.callLibrary')
       .addToUi();
 }
 
@@ -39,7 +43,7 @@ function test(x,y){
 }
 
 function theMessage(msg){
-  return "Got to the MESSAGE in bbMod! " + msg;
+  return "Got THE MESSAGE in bbMod! " + msg;
 }
 
 function callLibrary(){
@@ -65,10 +69,18 @@ function pick(func, args){
 //added this to see if I can get some script auth going
 function getPermission(){
   try{
-  DriveApp.getRootFolder();
+//  console.log("got here");
+//  let rslt = DriveApp.getRootFolder();
+//  console.log(rslt.getOwner().getEmail());
+  let rslt = ScriptApp.getOAuthToken();
+  console.log(rslt);
+  let ans = pick('theMessage',["Why is it like this?"]);
+  console.log(ans);
   return "Good";
   }
   catch(err){
+  console.error(err);
   return err;
   }
 }
+
