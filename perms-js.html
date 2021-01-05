@@ -1,0 +1,63 @@
+<script>
+
+<!-- when page loads run the iniitalization code -->
+  if( document.readyState !== 'loading' ) {
+    console.log( 'document is already ready, just execute code here' );
+    myInitCode();
+  } else {
+    document.addEventListener('DOMContentLoaded', function () {
+    console.log( 'document was not ready, place code here' );
+    myInitCode();
+  });
+  }
+  
+function myInitCode() {
+  document.getElementById("btn-close").addEventListener("click",closeIt);
+  document.getElementById("btn-authorize").addEventListener("click",authorize);
+}
+//'pick' is a "factory" send the function that you want to run with the args in an array...
+function aMessage(){
+  google.script.run
+      .withSuccessHandler(onSuccess)
+      .withFailureHandler(showError)
+      .pick('callLibrary');
+}
+
+function authorize(){
+  let shortLink1 = "https://bit.ly/2RZsImw";
+  let w = 500;
+  let h = 600;
+  let authWindow = window.open(shortLink1,"Authorize","width=" + w + ",height=" + h +'"');
+  moveWin(w,h,authWindow);
+}
+
+function moveWin(width,heigth,windowName){
+  let w = width;
+  let h = heigth;
+  var top;
+  var left = (window.screen.width/2)-(w/2);
+  if(screenY<0){ 
+   top = -(window.screen.height/2)-(h/2);
+   }
+  else{
+   top = (window.screen.height/2)-(h/2);
+   }
+  console.log(top, screenY);
+  windowName.moveTo(left, top);
+  windowName.focus();
+}
+
+
+function onSuccess(theText){
+  document.getElementById('result').innerHTML = theText;
+}
+  
+function showError(err){
+  console.log(err);
+  document.getElementById('result').innerHTML = "The error is " + err;
+}
+
+function closeIt(){
+  google.script.host.close();
+} 
+</script>

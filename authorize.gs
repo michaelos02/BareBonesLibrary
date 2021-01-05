@@ -10,3 +10,20 @@ function openTab(url) {
   SpreadsheetApp.getUi().showModalDialog(userInterface, 'Open Tab');
 }
 
+function showIt2(){
+  var html = HtmlService.createTemplateFromFile('perms').evaluate()
+
+  SpreadsheetApp.getUi().showModalDialog(html, 'Get Authorized');
+}
+
+function info(){
+
+  // Log the authorization status (REQUIRED or NOT_REQUIRED).
+  var authInfo = ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL);
+  Logger.log(authInfo.getAuthorizationStatus());
+  
+  // Log the URL used to grant access to the script.
+  var authInfo = ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL);
+  Logger.log(authInfo.getAuthorizationUrl());
+  
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <style>
+      #main{
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+    
+      #button-bar{
+        padding-top: 15px;      
+      }
+    </style>
+  </head>
+  <body>
+  <div id=main>
+    <h3 style="color: rgb(49, 14, 204)">Get Authorized</h3>
+    <p>Clicking the button below will attempt to open the authorization approval.</p>
+    <p>Please follow the prompts and approve.</p>
+    <div class="block" id="button-bar">
+      <button class="create" id="btn-authorize">Authorize</button>
+      <button id="btn-close">Close</button>
+    </div>
+  </div>
+  <div class="sidebar bottom">
+    <span class="gray">
+      mroResolutions</span>
+  </div>
+  
+  <?!= include("perms-js")?>
+  </body>
+  
+</html>
+
+
